@@ -1,0 +1,94 @@
+﻿@model Clique.Models.FACULTYSERVICE
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Management | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/service-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+    .checkbox {
+        padding-left: 10px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+        .checkbox input {
+            float: left
+        }
+</style>
+
+<body>
+
+        <div class="outer align-items-center">
+            <div class="main">
+                <div class="main-header">
+                    <h1><b>SERVICES</b></h1>
+                </div>
+                <div class="form">
+                    @using (Html.BeginForm("facultyupdateservice", "Clique", FormMethod.Post))
+                    {
+                        <div class="col-md-12 mb-1 mt-2">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(model => Model.clearance, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Clearance </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => Model.verification, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Verification of Grades</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => Model.others, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Others</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="row-5 row-space">
+                            <button class="submit" style="outline: none;">SAVE</button>
+                            <button class="submit" style="outline: none;">BACK</button>
+                        </div>
+                    }
+                    </div>
+                  
+            </div>
+        </div>
+
+    </body>
+
+</html>

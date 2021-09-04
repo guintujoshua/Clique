@@ -1,0 +1,71 @@
+﻿@model Clique.Models.TicketModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/queue-ticket.css">
+
+    <title>Queue Ticket | Clique</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ticket">
+            @{
+                string a = "00";
+                string b = "0";
+
+            }
+            <img src="~/Content/images/clique-finger-receipt.png" alt="Logo">
+            <p class="centered queue-header">Queue Number</p>
+
+            @{
+                if (Model.Qnumber < 10)
+                {
+                    <p class="centered queue-number">@a@Model.Qnumber</p>
+                }
+                else if (Model.Qnumber < 100)
+                {
+                    <p class="centered queue-number">@b@Model.Qnumber</p>
+                }
+                else
+                {
+                    <p class="centered queue-number">@Model.Qnumber</p>
+                }
+
+            }
+            <p class="centered queue-counter">@Model.UnitColor</p>
+
+            <!-- <p class="centered queue-header">Please be seated. <br>You will be served shortly.</p> -->
+            <hr class="new1">
+            <img src="~/Content/images/qr-code.png" alt="Logo" class="qr-code">
+            <p class="centered queue-header">
+                Scan the code to view the queue or visit our website:
+               
+            </p>
+            <p> www.aufclique.com </p>
+            <hr class="new2">
+   
+
+            @using (Html.BeginForm("Client", "Clique", FormMethod.Post))
+            {
+                <button id="btnPrint" class="hidden-print btnPrint">Queue</button>
+            }
+        </div>
+    </div>
+</body>
+
+<script src="~/Content/js/queue-ticket.js"></script>
+
+</html>

@@ -1,0 +1,326 @@
+﻿@model List<Clique.Models.QTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dashboard | Clique</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" href="~/Content/css/prism-toolbar.css">
+    <link rel="stylesheet" href="~/Content/css/prism-okaidia.css">
+    <link rel="stylesheet" href="~/Content/css/dashboard.css" id="theme-stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+            <a class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead" href="#"><i class="fas fa-align-left"></i></a><a class="navbar-brand fw-bold text-uppercase text-base" href="/Clique/AdminDashboard"><span class="d-none d-brand-partial">University </span><span class="d-none d-sm-inline">Registrar</span></a>
+            <ul class="ms-auto d-flex align-items-center list-unstyled mb-0">
+                <li class="nav-item dropdown ms-auto">
+                    <a class="nav-link pe-0" id="userInfo" href="#" data-bs-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><img class="avatar" src="~/Content/images/user.png"></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="userInfo">
+                        <div class="dropdown-header text-gray-700">
+                            <h6 class="text-uppercase font-weight-bold top-right">Admin</h6>
+                        </div>
+                        @Html.ActionLink("Reset Queue", "resetqueue", "reset", new { @class = "dropdown-item", onclick = "return confirm('Are you sure you want to reset the queue?');" })
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar py-3" id="sidebar">
+            <h6 class="sidebar-heading">Main</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted active" href="~/Clique/AdminDashboard">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#real-estate-1"></use>
+                        </svg><span class="sidebar-link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="/Clique/Accounts">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#user-1"></use>
+                        </svg><span class="sidebar-link-title">Accounts</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted " href="#" data-bs-target="#formsDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#survey-1"> </use>
+                        </svg><span class="sidebar-link-title">Reports </span>
+                    </a>
+                    <ul class="sidebar-menu list-unstyled collapse " id="formsDropdown">
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/AdmissionReports">Admission</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/StudentReports">Student or Graduate</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/FacultyReports">Faculty</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/OthersReports">Others</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading">OTHERS</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="~/Clique/Index">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#arrow-left-1"></use>
+                        </svg><span class="sidebar-link-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-holder bg-gray-100">
+            <div class="container-fluid px-lg-4 px-xl-5">
+                <section class="mb-3 mb-lg-5">
+                    <div class="row">
+                        <h1>Analytics Dashboard</h1>
+                        <div class="date-label">
+                            <label>Start Date</label>
+                            <label class="date-label-right">End Date</label>
+                        </div>
+                        @using (Html.BeginForm("UpdateTotalServed", "Clique", FormMethod.Post, new { @class = "month-year-picker" }))
+                        {
+                            @Html.TextBox("Start", null, new { type = "date" }) <text>&nbsp;&nbsp;</text>
+
+                            @Html.TextBox("End", null, new { type = "date" }) <text>&nbsp;&nbsp;</text>
+                            <input type="submit" , class="btn btn-month-year" value="UPDATE" />
+                        }
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/BlueCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-blue"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">Blue Counter</h6>
+                                            @{ int bluetotal = 0;
+                                                int redtotal = 0;
+                                                int yellowtotal = 0;
+                                                int greentotal = 0;
+                                                int pinktotal = 0;
+                                                int whitetotal = 0;
+                                            }
+                                            @for (int i = 0; i < Model.Count(); i++)
+                                            {
+                                                if (@Model[i].UnitColor == "blue" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    bluetotal = bluetotal + 1;
+                                                }
+                                                else if (@Model[i].UnitColor == "red" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    redtotal = redtotal + 1;
+                                                }
+                                                else if (@Model[i].UnitColor == "yellow" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    yellowtotal = yellowtotal + 1;
+                                                }
+                                                else if (@Model[i].UnitColor == "green" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    greentotal = greentotal + 1;
+                                                }
+                                                else if (@Model[i].UnitColor == "pink" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    pinktotal = pinktotal + 1;
+                                                }
+                                                else if (@Model[i].UnitColor == "white" && Model[i].QStatus == "served" || Model[i].QStatus =="notserved")
+                                                {
+                                                    whitetotal = whitetotal + 1;
+                                                }
+                                            }
+                                            <span class="text-gray-500">@bluetotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-blue"><i class="fas fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/GreenCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-green"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">Green Counter</h6><span class="text-gray-500">@greentotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-green"><i class="fa fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/PinkCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-pink"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">Pink Counter</h6><span class="text-gray-500">@pinktotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-pink"><i class="fa fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/RedCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-red"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">Red Counter</h6><span class="text-gray-500">@redtotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-red"><i class="fas fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/WhiteCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-gray"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">White Counter</h6><span class="text-gray-500">@whitetotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-gray"><i class="fas fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <a href="/Clique/YellowCounterReports">
+                                <div class="card-widget h-100">
+                                    <div class="card-widget-body">
+                                        <div class="dot me-3 bg-yellow"></div>
+                                        <div class="text">
+                                            <h6 class="mb-0">Yellow Counter</h6><span class="text-gray-500">@yellowtotal</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon text-white bg-yellow"><i class="fas fa-archive"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row mb-5">
+                        <hr class="solid">
+                        <h2>Statistics</h2>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            @{
+                                                int totaleverything = bluetotal + whitetotal + redtotal + pinktotal + greentotal + yellowtotal;
+                                                int avg = totaleverything / 6;
+                                            }
+                                            <h4 class="fw-normal text-blue">@totaleverything</h4>
+                                            <p class="subtitle text-sm text-muted mb-0">Total Served</p>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <svg class="svg-icon text-blue">
+                                                <use xlink:href="~/Content/icons/orion-svg-sprite.svg#sales-up-1"> </use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer py-3 bg-blue-light">
+                                    <div class="row align-items-center text-blue">
+                                        <div class="col-10">
+                                            <p class="mb-0"></p>
+                                        </div>
+                                        <div class="col-2 text-end">
+                                            <i class="fas fa-caret-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="fw-normal text-red">@avg</h4>
+                                            <p class="subtitle text-sm text-muted mb-0">Average Number Served </p>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <svg class="svg-icon text-red">
+                                                <use xlink:href="~/Content/icons/orion-svg-sprite.svg#statistic-1"> </use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer py-3 bg-red-light">
+                                    <div class="row align-items-center text-red">
+                                        <div class="col-10">
+                                            <p class="mb-0"></p>
+                                        </div>
+                                        <div class="col-2 text-end">
+                                            <i class="fas fa-caret-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start fw-bold">
+                            <p class="mb-2 mb-md-0 fw-bold">CLIQUE &copy; 2021 • Web Based Queue Management System</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
+    <script src="~/Content/js/tables-datatable.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/js.cookie.min.js"></script>
+    <script src="~/Content/js/theme.js"></script>
+    <script src="~/Content/js/prism.js"></script>
+    <script src="~/Content/js/prism-normalize-whitespace.min.js"></script>
+    <script src="~/Content/js/prism-toolbar.min.js"></script>
+    <script src="~/Content/js/prism-copy-to-clipboard.min.js"></script>
+    <script type="text/javascript">
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+    </script>
+
+    <link rel="stylesheet" href="~/Content/css/font-awesome.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</body>
+
+</html>

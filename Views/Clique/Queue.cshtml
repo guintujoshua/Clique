@@ -1,0 +1,450 @@
+﻿@model List<Clique.Models.QTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="10">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Queue | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/queue.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="row-1">
+        <div class="marquee">
+            <div class="marqueeone">
+                NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING
+                &nbsp&nbsp NOW SERVING
+            </div>
+            <div class="marqueetwo">
+                NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING
+                &nbsp&nbsp NOW SERVING
+            </div>
+            <div class="marqueethree">
+                NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING
+                &nbsp&nbsp NOW SERVING
+            </div>
+            <div class="marqueefour">
+                NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING &nbsp&nbsp NOW SERVING
+                &nbsp&nbsp NOW SERVING
+            </div>
+        </div>
+        <div class="grid-6 black">
+            <div>
+                @{
+                    string a = "00";
+                    string b = "0";
+                }
+                @{
+                    int totalserved = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalserved < 1)
+                    {
+                        if (@Model[i].UnitColor == "pink" && Model[i].QStatus == "serving" && Model[i].QNPink < 10)
+                        {
+
+                            <p>@a@Model[i].QNPink</p>
+                            totalserved = totalserved + 1;
+                        }
+                        else if (@Model[i].UnitColor == "pink" && Model[i].QStatus == "serving" && Model[i].QNPink < 100)
+                        {
+                            string num1 = @Model[i].QNPink.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNPink.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalserved = totalserved + 1;
+                        }
+                        else if (@Model[i].UnitColor == "pink" && Model[i].QStatus == "serving" && Model[i].QNPink >= 100)
+                        {
+
+                            <p>@Model[i].QNPink</p>
+                            totalserved = totalserved + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{
+                    int totalservedwhite = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalservedwhite < 1)
+                    {
+                        if (@Model[i].UnitColor == "white" && Model[i].QStatus == "serving" && Model[i].QNWhite < 10)
+                        {
+
+                            <p>@a@Model[i].QNWhite</p>
+                            totalservedwhite = totalservedwhite + 1;
+                        }
+                        else if (@Model[i].UnitColor == "white" && Model[i].QStatus == "serving" && Model[i].QNWhite < 100)
+                        {
+                            string num1 = @Model[i].QNWhite.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNWhite.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalservedwhite = totalservedwhite + 1;
+                        }
+                        else if (@Model[i].UnitColor == "white" && Model[i].QStatus == "serving" && Model[i].QNWhite >= 100)
+                        {
+
+                            <p>@Model[i].QNWhite</p>
+                            totalservedwhite = totalservedwhite + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{
+                    int totalservedyellow = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalservedyellow < 1)
+                    {
+                        if (@Model[i].UnitColor == "yellow" && Model[i].QStatus == "serving" && Model[i].QNYellow < 10)
+                        {
+
+                            <p>@a@Model[i].QNYellow</p>
+                            totalservedyellow = totalservedyellow + 1;
+                        }
+                        else if (@Model[i].UnitColor == "yellow" && Model[i].QStatus == "serving" && Model[i].QNYellow < 100)
+                        {
+                            string num1 = @Model[i].QNYellow.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNYellow.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalservedyellow = totalservedyellow + 1;
+                        }
+                        else if (@Model[i].UnitColor == "yellow" && Model[i].QStatus == "serving" && Model[i].QNYellow >= 100)
+                        {
+
+                            <p>@Model[i].QNYellow</p>
+                            totalservedyellow = totalservedyellow + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{
+                    int totalservedblue = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalservedblue < 1)
+                    {
+                        if (@Model[i].UnitColor == "blue" && Model[i].QStatus == "serving" && Model[i].QNBlue < 10)
+                        {
+
+                            <p>@a@Model[i].QNBlue</p>
+                            totalservedblue = totalservedblue + 1;
+                        }
+                        else if (@Model[i].UnitColor == "blue" && Model[i].QStatus == "serving" && Model[i].QNBlue < 100)
+                        {
+                            string num1 = @Model[i].QNBlue.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNBlue.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalservedblue = totalservedblue + 1;
+                        }
+                        else if (@Model[i].UnitColor == "blue" && Model[i].QStatus == "serving" && Model[i].QNBlue >= 100)
+                        {
+
+                            <p>@Model[i].QNBlue</p>
+                            totalservedblue = totalservedblue + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{
+                    int totalservedred = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalservedred < 1)
+                    {
+
+                        if (@Model[i].UnitColor == "red" && Model[i].QStatus == "serving" && Model[i].QNRed < 10)
+                        {
+
+                            <p>@a@Model[i].QNRed</p>
+                            totalservedred = totalservedred + 1;
+                        }
+                        else if (@Model[i].UnitColor == "red" && Model[i].QStatus == "serving" && Model[i].QNRed < 100)
+                        {
+                            string num1 = @Model[i].QNRed.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNRed.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalservedred = totalservedred + 1;
+                        }
+                        else if (@Model[i].UnitColor == "red" && Model[i].QStatus == "serving" && Model[i].QNRed >= 100)
+                        {
+
+                            <p>@Model[i].QNRed</p>
+                            totalservedred = totalservedred + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{
+                    int totalservedgreen = 0;
+                }
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalservedgreen < 1)
+                    {
+
+                        if (@Model[i].UnitColor == "green" && Model[i].QStatus == "serving" && Model[i].QNGreen < 10)
+                        {
+
+                            <p>@a@Model[i].QNGreen</p>
+                            totalservedgreen = totalservedgreen + 1;
+                        }
+                        else if (@Model[i].UnitColor == "green" && Model[i].QStatus == "serving" && Model[i].QNGreen < 100)
+                        {
+                            string num1 = @Model[i].QNGreen.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNGreen.ToString().Substring(1, 1);
+                            <p>@b@num1@num2</p>
+                            totalservedgreen = totalservedgreen + 1;
+                        }
+                        else if (@Model[i].UnitColor == "green" && Model[i].QStatus == "serving" && Model[i].QNGreen >= 100)
+                        {
+
+                            <p>@Model[i].QNGreen</p>
+                            totalservedgreen = totalservedgreen + 1;
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row-2">
+        <div class="grid-6">
+
+            <div>
+                @{ int total = 0; }
+
+                @{
+                    for (int i = 0; i < Model.Count(); i++)
+                    {
+                        if (total < 8)
+                        {
+
+                            if (@Model[i].UnitColor == "pink" && Model[i].QNPink < 10 && Model[i].QStatus == "waiting")
+                            {
+                                <span>@a@Model[i].QNPink</span>
+                                total = total + 1;
+                            }
+                            else if (@Model[i].UnitColor == "pink" && Model[i].QNPink < 100 && Model[i].QStatus == "waiting")
+                            {
+                                string num1 = @Model[i].QNPink.ToString().Substring(0, 1);
+                                string num2 = @Model[i].QNPink.ToString().Substring(1, 1);
+                                <span>@b@num1@num2 </span>
+                                total = total + 1;
+                            }
+                            else if (@Model[i].UnitColor == "pink" && Model[i].QStatus == "waiting" && Model[i].QNPink >= 100)
+                            {
+
+                                <span>@Model[i].QNPink</span>
+                                total = total + 1;
+                            }
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{ int totalwhite = 0; }
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalwhite < 8)
+                    {
+                        if (@Model[i].UnitColor == "white" && Model[i].QNWhite < 10 && Model[i].QStatus == "waiting")
+                        {
+                            <span>@a@Model[i].QNWhite</span>
+                            totalwhite = totalwhite + 1;
+                        }
+                        else if (@Model[i].UnitColor == "white" && Model[i].QNWhite < 100 && Model[i].QStatus == "waiting")
+                        {
+                            string num1 = @Model[i].QNWhite.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNWhite.ToString().Substring(1, 1);
+                            <span>@b@num1@num2 </span>
+                            totalwhite = totalwhite + 1;
+                        }
+                        else if (@Model[i].UnitColor == "white" && Model[i].QStatus == "waiting" && Model[i].QNWhite >= 100)
+                        {
+
+                            <span>@Model[i].QNWhite</span>
+                            totalservedwhite = totalservedwhite + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{ int totalyellow = 0; }
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalyellow < 8)
+                    {
+                        if (@Model[i].UnitColor == "yellow" && Model[i].QNYellow < 10 && Model[i].QStatus == "waiting")
+                        {
+                            <span>@a@Model[i].QNYellow</span>
+                            totalyellow = totalyellow + 1;
+                        }
+                        else if (@Model[i].UnitColor == "yellow" && Model[i].QNYellow < 100 && Model[i].QStatus == "waiting")
+                        {
+                            string num1 = @Model[i].QNYellow.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNYellow.ToString().Substring(1, 1);
+                            <span>@b@num1@num2 </span>
+                            totalyellow = totalyellow + 1;
+                        }
+                        else if (@Model[i].UnitColor == "yellow" && Model[i].QStatus == "waiting" && Model[i].QNYellow >= 100)
+                        {
+
+                            <span>@Model[i].QNYellow</span>
+                            totalyellow = totalyellow + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{ int totalblue = 0; }
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalblue < 8)
+                    {
+                        if (@Model[i].UnitColor == "blue" && Model[i].QNBlue < 10 && Model[i].QStatus == "waiting")
+                        {
+                            <span>@a@Model[i].QNBlue</span>
+                            totalblue = totalblue + 1;
+                        }
+                        else if (@Model[i].UnitColor == "blue" && Model[i].QNBlue < 100 && Model[i].QStatus == "waiting")
+                        {
+                            string num1 = @Model[i].QNBlue.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNBlue.ToString().Substring(1, 1);
+                            <span>@b@num1@num2 </span>
+                            totalblue = totalblue + 1;
+                        }
+                        else if (@Model[i].UnitColor == "blue" && Model[i].QStatus == "waiting" && Model[i].QNBlue >= 100)
+                        {
+
+                            <span>@Model[i].QNBlue</span>
+                            totalblue = totalblue + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{ int totalred = 0; }
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalred < 8)
+                    {
+                        if (@Model[i].UnitColor == "red" && Model[i].QNRed < 10 && Model[i].QStatus == "waiting")
+                        {
+                            <span>@a@Model[i].QNRed</span>
+                            totalred = totalred + 1;
+                        }
+                        else if (@Model[i].UnitColor == "red" && Model[i].QNRed < 100 && Model[i].QStatus == "waiting")
+                        {
+                            string num1 = @Model[i].QNRed.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNRed.ToString().Substring(1, 1);
+                            <span>@b@num1@num2 </span>
+                            totalred = totalred + 1;
+                        }
+                        else if (@Model[i].UnitColor == "red" && Model[i].QStatus == "waiting" && Model[i].QNRed >= 100)
+                        {
+
+                            <span>@Model[i].QNRed</span>
+                            totalred = totalred + 1;
+                        }
+                    }
+                }
+            </div>
+            <div>
+                @{ int totalgreen = 0; }
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (totalgreen < 8)
+                    {
+                        if (@Model[i].UnitColor == "green" && Model[i].QNGreen < 10 && Model[i].QStatus == "waiting")
+                        {
+                            <span>@a@Model[i].QNGreen</span>
+                            totalgreen = totalgreen + 1;
+                        }
+                        else if (@Model[i].UnitColor == "green" && Model[i].QNGreen < 100 && Model[i].QStatus == "waiting")
+                        {
+                            string num1 = @Model[i].QNGreen.ToString().Substring(0, 1);
+                            string num2 = @Model[i].QNGreen.ToString().Substring(1, 1);
+                            <span>@b@num1@num2 </span>
+                            totalgreen = totalgreen + 1;
+                        }
+                        else if (@Model[i].UnitColor == "green" && Model[i].QStatus == "waiting" && Model[i].QNGreen >= 100)
+                        {
+
+                            <span>@Model[i].QNGreen</span>
+                            totalgreen = totalgreen + 1;
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    @{
+        if (total == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/Pink_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+        if (totalblue == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/Blue_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+        if (totalgreen == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/Green_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+        if (totalred == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/Red_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+        if (totalwhite == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/White_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+        if (totalyellow == 1)
+        {
+            <audio controls autoplay style="display: none;">
+                <source src="~/Content/sound/Yellow_Counter.mp3" type="audio/mpeg">>
+            </audio>
+        }
+    }
+</body>
+
+</html>

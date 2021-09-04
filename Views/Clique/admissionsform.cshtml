@@ -1,0 +1,381 @@
+﻿@{
+    Layout = null;
+}
+@model Clique.Models.Admission
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Admissions Form | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/admissions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+
+@using (Html.BeginForm("Admission", "Clique", FormMethod.Post))
+{
+    <body>
+        <div class="form main">
+            <div class="left">
+                <img src="~/Content/images/clique-finger.png" alt="" srcset="">
+            </div>
+            <div class="right">
+                <div class="col-3">
+                    <span>
+                        <i class="fas fa-id-card"></i>
+                        @Html.EditorFor(model => model.fname, new { htmlAttributes = new { type = "text", placeholder = "First Name" } })
+                    </span>
+                    <span>
+                        <i class="fas fa-id-card"></i>
+                        @Html.EditorFor(model => model.mname, new { htmlAttributes = new { type = "text", placeholder = "Middle Name" } })
+                    </span>
+
+                    <span>
+                        <i class="fas fa-id-card"></i>
+                        @Html.EditorFor(model => model.lname, new { htmlAttributes = new { type = "text", placeholder = "Last Name" } })
+                    </span>
+                </div>
+                <div class="col-2">
+                    <span>
+                        @{
+                            List<SelectListItem> selections = new List<SelectListItem>()
+                            {
+                                new SelectListItem {
+                                    Text = "Intended Course",
+                                    Disabled = true,
+                                    Selected = true
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF ALLIED MEDICAL PROFESSIONS]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Clinical Pharmacy",
+                                    Value = "BS Clinical Pharmacy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Medical Technology",
+                                    Value = "BS Medical Technology"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Occupational Therapy",
+                                    Value = "BS Occupational Therapy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Pharmacy",
+                                    Value = "BS Pharmacy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Physical Therapy",
+                                    Value = "BS Physical Therapy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Radiologic Technology",
+                                    Value = "BS Radiologic Technology"
+                                },
+                                new SelectListItem {
+                                    Text = "Research 2: Research Implementation and Presentation",
+                                    Value = "Research 2: Research Implementation and Presentation"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF ARTS AND SCIENCES]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Arts in Communication",
+                                    Value = "BA Communication"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Arts in Psychology",
+                                    Value = "BA Psychology"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Arts in Psychology - Master of Arts in Psychology",
+                                    Value = "BA Psychology - MA Psychology"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Biology",
+                                    Value = "BS Biology"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Psychology",
+                                    Value = "BS Psychology"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF BUSINESS AND ACCOUNTANCY]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Accountancy",
+                                    Value = "BS Accountancy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Business Administration",
+                                    Value = "BS Business Administration"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Hospitality Management",
+                                    Value = "BS Hospitality Management"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Hotel and Restaurant Management",
+                                    Value = "BS Hotel and Restaurant Management"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Management Accounting",
+                                    Value = "BS Management Accounting"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Tourism Management",
+                                    Value = "BS Tourism Management"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF COMPUTER STUDIES]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Multimedia Arts",
+                                    Value = "Bachelor of Multimedia Arts"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Computer Science",
+                                    Value = "BS Computer Science"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Information Technology",
+                                    Value = "BS Information Technology"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF CRIMINAL JUSTICE EDUCATION]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Criminology",
+                                    Value = "BS Criminology"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF EDUCATION]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Early Childhood Education",
+                                    Value = "Bachelor of Early Childhood Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Elementary Education",
+                                    Value = "Bachelor of Elementary Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Physical Education",
+                                    Value = "Bachelor of Physical Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Secondary Education",
+                                    Value = "Bachelor of Secondary Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Special Needs Education",
+                                    Value = "Bachelor of Special Needs Education"
+                                },
+                                new SelectListItem {
+                                    Text = "CLT Immersion Program",
+                                    Value = "CLT Immersion Program"
+                                },
+                                new SelectListItem {
+                                    Text = "Professional Certificate Course in Teaching",
+                                    Value = "Professional Certificate Course in Teaching"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF ENGINEERING AND ARCHITECTURE]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Architecture",
+                                    Value = "BS Architecture"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Civil Engineering",
+                                    Value = "BS Civil Engineering"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Occupational Therapy",
+                                    Value = "BS Occupational Therapy"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Computer Engineering",
+                                    Value = "BS Computer Engineering"
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Electronics Engineering",
+                                    Value = "BS Electronics Engineering"
+                                },
+                                new SelectListItem {
+                                    Text = "[COLLEGE OF NURSING]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Bachelor of Science in Nursing",
+                                    Value = "BS Nursing"
+                                },
+                                new SelectListItem {
+                                    Text = "[MASTERAL PROGRAMS]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Public Administration",
+                                    Value = "Master in Public Administration"
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Business Administration",
+                                    Value = "Master in Business Administration"
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Information Technology",
+                                    Value = "Master in Information Technology"
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Nursing",
+                                    Value = "Master in Nursing"
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Public Administration",
+                                    Value = "Master in Public Administration"
+                                },
+                                new SelectListItem {
+                                    Text = "Master in Public Health",
+                                    Value = "Master in Public Health"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Education",
+                                    Value = "MA in Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Nursing",
+                                    Value = "MA in Nursing"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Nursing Major in Medical Surgical Nursing",
+                                    Value = "MA Nursing Major in Medical Surgical Nursing"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Psychology",
+                                    Value = "MA in Psychology"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Special Education",
+                                    Value = "MA in Special Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Teaching",
+                                    Value = "MA in Teaching"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Arts in Teaching Physical Education",
+                                    Value = "MA Teaching Physical Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Engineering",
+                                    Value = "Master of Engineering"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Medical Laboratory Science",
+                                    Value = "Master of Medical Laboratory Science"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Science in Criminal Justice with Specialization in Criminology",
+                                    Value = "Master of Science in Criminal Justice with Specialization in Criminology"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Science in Medical Laboratory Science",
+                                    Value = "Master of Science in Medical Laboratory Science"
+                                },
+                                new SelectListItem {
+                                    Text = "Master of Science in Physical Therapy Master of Science in Public Health",
+                                    Value = "Master of Science in Physical Therapy Master of Science in Public Health"
+                                },
+                                new SelectListItem {
+                                    Text = "[DOCTORAL PROGRAMS]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor in Business Administration (Professional Track)",
+                                    Value = "Doctor in Business Administration (Professional Track)"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Business Administration",
+                                    Value = "Doctor of Business Administration"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Information Technology",
+                                    Value = "Doctor of Information Technology"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Information Technology with area of specialization in Business Intelligence and Data Analytics",
+                                    Value = "Doctor of Information Technology with area of specialization in Business Intelligence and Data Analytics"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Philosophy in Curriculum and Instruction Doctor of Philosophy in Education",
+                                    Value = "Doctor of Philosophy in Curriculum and Instruction Doctor of Philosophy in Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Philosophy in Management",
+                                    Value = "Doctor of Philosophy in Management"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Philosophy in Management (Academic Track)",
+                                    Value = "Doctor of Philosophy in Management (Academic Track)"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Public Health in Health Promotion and Education",
+                                    Value = "Doctor of Public Health in Health Promotion and Education"
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Public Health in Health Promotion and Education (Professional Track)",
+                                    Value = "Doctor of Public Health in Health Promotion and Education (Professional Track)"
+                                },
+                                new SelectListItem {
+                                    Text = "Professional Course",
+                                    Value = "Professional Course"
+                                },
+                                new SelectListItem {
+                                    Text = "[SCHOOL OF MEDICINE]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Doctor of Medicine",
+                                    Value = "Doctor of Medicine"
+                                },
+                                new SelectListItem {
+                                    Text = "[SCHOOL OF LAW]",
+                                    Disabled = true
+                                },
+                                new SelectListItem {
+                                    Text = "Juris Doctor",
+                                    Value = "Juris Doctor"
+                                }
+                            };
+                        }
+                        <i class="fas fa-university"></i>
+                        @Html.DropDownListFor(model => model.course, selections, new { @class="intended-course" })
+                    </span>
+                    <span>
+                        <i class="fas fa-tools"></i>
+                        @Html.EditorFor(model => model.lastschool, new { htmlAttributes = new { type = "text", placeholder = "Last School Attended" } })
+                    </span>
+                </div><input type="submit" class="submit" value="PROCEED" \>
+            </div>
+        </div>
+    </body>
+}
+
+</html>

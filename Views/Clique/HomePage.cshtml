@@ -1,0 +1,943 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Clique</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Content/images/icon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/css/aos.css" rel="stylesheet">
+    <link href="~/Content/css/remixicon.css" rel="stylesheet">
+    <link href="~/Content/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/Content/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/css/home-page.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="~/Clique/HomePage" class="logo d-flex align-items-center">
+                <img src="~/Content/images/auf-clique.png" alt="">
+                <span></span>
+            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#counters">Counters</a></li>
+                    <li><a class="nav-link scrollto" href="#faqs">FAQs</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="getstarted" href="~/Clique/Index">Sign In</a></li>
+                    <li><a class="getstarted" href="~/Clique/Queue">View Queue</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Handle your queues wisely and instantaneously</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">
+                        The University Registrar is committed to providing quality
+                        services to students, graduates, faculty, and other members of the university community
+                    </h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#about"
+                               class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>GET STARTED</span>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="~/Content/images/hero-img.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h3>Who Are We?</h3>
+                            <h2>University Registrar</h2>
+                            <p style="text-align: justify;">
+                                The Office of the University Registrar operates in the areas of admissions, enrollment, graduation,
+                                international student special study permit or visa processing, student records management, and other
+                                related services.
+                            </p>
+                            <div class="text-center text-lg-start">
+                                <a href="#services"
+                                   class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <span>SERVICES</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="~/Content/images/about.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Section -->
+        <!-- ======= Values Section ======= -->
+        <section id="services" class="values">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>What do we provide?</h2>
+                    <p>Services</p>
+                </header>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="box" data-aos="fade-up" data-aos-delay="200">
+                            <img src="~/Content/images/service-1.png" class="img-fluid" alt="">
+                            <h3>Students' Entrance and Credentials</h3>
+                            <p>The Office of the University Registrar processes students’ entrance and other academic credentials.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="fade-up" data-aos-delay="400">
+                            <img src="~/Content/images/service-2.png" class="img-fluid" alt="">
+                            <h3>Advises Students and Other Clientele</h3>
+                            <p>
+                                The Office of the University Registrar advises students and other clientele on curriculum requirements
+                                and other academic policies of the University and concerned government agencies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="fade-up" data-aos-delay="600">
+                            <img src="~/Content/images/service-3.png" class="img-fluid" alt="">
+                            <h3>Study Permit and Student Visa for Foreign Students</h3>
+                            <p>
+                                The Office of the University Registrar processes special study permit and student visa of international
+                                students.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="box" data-aos="fade-up" data-aos-delay="200">
+                            <img src="~/Content/images/service-4.png" class="img-fluid" alt="">
+                            <h3>Student Evaluation</h3>
+                            <p>The Office of the University Registrar evaluates and credits subjects/units earned by the students.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="fade-up" data-aos-delay="400">
+                            <img src="~/Content/images/service-5.png" class="img-fluid" alt="">
+                            <h3>Student Record</h3>
+                            <p>The Office of the University Registrar updates student records.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="fade-up" data-aos-delay="600">
+                            <img src="~/Content/images/service-6.png" class="img-fluid" alt="">
+                            <h3>Document Request</h3>
+                            <p>
+                                The Office of the University Registrar issues Transcript of Records, Diploma, Transfer Credentials and
+                                other school documents; and verifies, authenticates, and certifies school records upon request of
+                                individuals and public or private organizations, here and abroad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Values Section -->
+        <!-- ======= Features Section ======= -->
+        <section id="counters" class="features">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Unit Counters</h2>
+                    <p>Academic Programs</p>
+                </header>
+            </div>
+            <div class="container" data-aos="fade-up">
+                <!-- Feature Tabs -->
+                <div class="row feature-tabs feature-tabs-center" data-aos="fade-up">
+                    <div class="col-lg-12">
+                        <!-- Tabs -->
+                        <ul class="nav nav-pills mb-3">
+                            <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Yellow Counter</a></li>
+                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Blue Counter</a></li>
+                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab3">Red Counter</a></li>
+                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab4">Green Counter</a></li>
+                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab5">White Counter</a></li>
+                            <li><a class="nav-link" data-bs-toggle="pill" href="#tab6">Pink Counter</a></li>
+                        </ul><!-- End Tabs -->
+                        <!-- Tab Content -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab1">
+                                <div class="d-flex align-items-center mb-2" id="counter">
+                                    <h4 class="h4-center">College of Nursing</h4>
+                                </div>
+                                <p>Bachelor of Science in Nursing</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Bachelor of Science in Business Administration</h4>
+                                </div>
+                                <p>
+                                    Major in:
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marketing Management
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management and Entrepreneurship
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Human Resource Management
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">College of Computer Studies</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Science in Information Technology
+                                    <br>Bachelor of Science in Computer Science
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Bachelor of Science in Business Administration Major in Accounting</h4>
+                                </div>
+                            </div><!-- End Tab 1 Content -->
+                            <div class="tab-pane fade show" id="tab2">
+                                <div class="d-flex align-items-center mb-2" id="counter">
+                                    <h4 class="h4-center">College of Allied Medical Professions</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Science in Medical Technology
+                                    <br>Bachelor of Science in Physical Therapy
+                                    <br>Bachelor of Science in Occupational Therapy
+                                    <br>Bachelor of Science in Radiologic Technology
+                                    <br>Bachelor of Science in Pharmacy
+                                    <br>Bachelor of Science in Clinical Pharmacy
+                                </p>
+                            </div><!-- End Tab 2 Content -->
+                            <div class="tab-pane fade show" id="tab3">
+                                <div class="d-flex align-items-center mb-2" id="counter">
+                                    <h4 class="h4-center">College of Criminal Justice Education</h4>
+                                </div>
+                                <p>Bachelor of Science in Criminology</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">College of Education</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Elementary Education
+                                    <br>Bachelor of Physical Education
+                                    <br>Bachelor of Secondary Education
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">College of Engineering and Architecture</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Science in Architecture
+                                    <br>Bachelor of Science in Civil Engineering
+                                    <br>Bachelor of Science in Computer Engineering
+                                    <br>Bachelor of Science in Electronics Engineering
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">College of Business and Accountancy</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Science in Accountancy
+                                    <br>Bachelor of Science in Management Accounting
+                                    <br>Bachelor of Science in Tourism Management
+                                    <br>Bachelor of Science in Hotel and Restaurant Management
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">School of Law/Juris Doctor</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Aircraft Maintenance</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Refrigeration and Air Condition</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">General Radio Communication Operator</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Secretarial</h4>
+                                </div>
+                            </div><!-- End Tab 3 Content -->
+                            <div class="tab-pane fade show" id="tab4">
+                                <div class="d-flex align-items-center mb-2" id="counter">
+                                    <h4 class="h4-center">College of Arts and Sciences</h4>
+                                </div>
+                                <p>
+                                    Bachelor of Arts in Communication
+                                    <br>Bachelor of Science in Biology
+                                    <br>Bachelor of Science in Psychology
+                                    <br>Bachelor of Arts in Psychology
+                                </p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">School of Medicine/Doctor of Medicine</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Caregiving NC II</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">PhD in Education Management</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Graduate School</h4>
+                                </div>
+                            </div><!-- End Tab 4 Content -->
+                            <div class="tab-pane fade show" id="tab5">
+                                <div class="d-flex align-items-center mb-2" id="counter">
+                                    <h4 class="h4-center">Foreign Students</h4>
+                                </div>
+                            </div><!-- End Tab 5 Content -->
+                            <div class="tab-pane fade show" id="tab6" id="counter">
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Information</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Admission</h4>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h4 class="h4-center">Release of Documents</h4>
+                                </div>
+                            </div><!-- End Tab 6 Content -->
+                        </div>
+                    </div>
+                </div><!-- End Feature Tabs -->
+                <!-- Feature Icons -->
+            </div>
+        </section><!-- End Features Section -->
+        <!-- ======= F.A.Q Section ======= -->
+        <section id="faqs" class="faq">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>F.A.Q</h2>
+                    <p>Frequently Asked Question</p>
+                </header>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- F.A.Q List 1-->
+                        <div class="accordion accordion-flush" id="faqlist1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                                        How could I reach the Registrar’s Office for questions or concerns?
+                                    </button>
+                                </h2>
+                                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        <b>Office E-mail: </b>
+                                        <br>registrar@auf.edu.ph
+                                        <br><br><b>Office Phone Numbers: </b>
+                                        <br>(045) 625-2888 local 1707 - Tuesday, Wednesday and Thursday / 9:00 am - 3:00 pm
+                                        <br><br><b>Hotlines: </b>
+                                        <br>+63999-411-1687 (Smart) / +63967-210-0049 (Globe) - Monday to Friday / 9:00 am - 5:00 pm (CALLS
+                                        ONLY)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">How long does it take for my newly enrolled subjects to reflect in MyCLASS after paying (onsite/via bank)?</button>
+                                </h2>
+                                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Assuming that you have successfully completed the enrolment process,
+                                        including validation of payment.
+
+                                        <br><br>For on campus payment, validation is immediate. Uploading of verified enrollments to MyClass
+                                        are done at the end of the same day. You should be able to view your subjects in MyClass the day after
+                                        successful validation of payment.
+
+                                        <br><br>For bank payments, validation is usually done the next business day. If all is in order, the
+                                        validation process takes only a couple of minutes. You should be able to view your subjects in MyClass
+                                        the day after successful validation of payment.
+
+                                        <br><br>On some occasions the length of the validation process may take longer specially for those who
+                                        have back accounts and / or for those who were not able to properly follow the payment instructions or
+                                        sequence of the enrolment process.
+
+                                        <br><br>To verify if your payment has been validated correctly, you may visit your MyAU account and
+                                        check the ENROLLMENT ... FEES PAID DURING ENROLLMENT link. It should show the assessment and payment
+                                        details for the semester you are enrolled in. Otherwise, you may need to reach out to
+                                        accounting@auf.edu.ph and attach proof of payment to aid in the verification process.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">Would a representative be allowed to process/claim my requested document/s on my behalf?</button>
+                                </h2>
+                                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Being the document owner, you may assign a representative to process and claim your requested
+                                        document/s. The following are required:
+
+                                        <br><br>
+                                        <ul>
+                                            <li>Letter of authorization</li>
+                                            <li>Photocopy of your valid ID</li>
+                                            <li>Valid ID of your representative</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">How could I reach the Registrar’s Office or the Liaison Officer for questions or concerns?</button>
+                                </h2>
+                                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        <b>Office E-mail: </b>
+                                        <br>registrar@auf.edu.ph
+
+                                        <br><br><b>Liaison Officer's E-mail: </b>
+                                        <br>balagtas.paul@auf.edu.ph
+
+                                        <br><br><b>Office Phone Numbers: </b>
+                                        <br>(045) 625-2888 local 1707 - Tuesday, Wednesday and Thursday / 9:00 am - 3:00 pm
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">What are entrance credentials and why is it important to submit them?</button>
+                                </h2>
+                                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Entrance credentials are documents required for submission in order to be officially enrolled. These
+                                        are:
+
+                                        <br><br>
+                                        <ol>
+                                            <b>
+                                                <li>Academic Credentials:</li>
+                                            </b>
+                                            <ul>
+                                                <li>
+                                                    Basic Education – Previous grade level Report Card or complete Student Permanent Record (SF10
+                                                    / Form 137 A)
+                                                </li>
+                                                <li>
+                                                    College Freshmen – Senior High School Report Card or complete Senior High School Permanent
+                                                    Record (SF10 / Form 137 A)
+                                                </li>
+                                                <li>
+                                                    College Transferee – Certificate of Eligibility to Transfer (Honorable Dismissal) and Official
+                                                    Transcript of Records
+                                                </li>
+                                                <li>School of Law - Official Transcript of Records </li>
+                                                <li>
+                                                    School of Medicine - Certificate of Eligibility to Transfer (Honorable Dismissal), Official
+                                                    Transcript of Records, Certification of Completion of Bachelor’s Degree, Certification of
+                                                    General Weighted Average in the Bachelor’s Degree and NMAT results
+                                                </li>
+                                                <li>Graduate School - Official Transcript of Records</li>
+                                            </ul>
+                                            <br>
+                                            <b>
+                                                <li>
+                                                    Birth Certificate (PSA copy for Filipino citizens or birth certificate issued by the country
+                                                    of origin for foreign students)
+                                                </li>
+                                            </b>
+                                            If you are a foreign student, additional documents are required, which must be
+                                            authenticated by the Philippine Embassy / Consulate in your country or must have affixed Apostille
+                                            (for Hague Apostille member countries):</li>
+                                            <ul>
+                                                <li>Police Clearance</li>
+                                                <li>Medical Fitness Certificate</li>
+                                                <li>
+                                                    A notarized Affidavit of Support from parents AND proof of adequate financial support (Bank
+                                                    Certificate) to cover expenses for student’s accommodation and subsistence, school dues and
+                                                    other incidental expenses.
+                                                </li>
+                                            </ul>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-6">What are the schedules of issuances and fees for document requests?</button>
+                                </h2>
+                                <div id="faq-content-6" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Refer to this <a href="https://drive.google.com/file/d/1t0bQNmAgOP_K5RNMaof_HXTDED3QRBFa/view">document</a> for
+                                        schedules of issuances and fees for document requests
+
+                                        <br><br>Please note that the indicated lead time for the release of documents is longer than usual due
+                                        to RO’s work-from-home and skeletal workforce arrangements at present. RO will revert to regular lead
+                                        time once normal office operations resume.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-7">How do I request for a Good Moral Character Certification?</button>
+                                </h2>
+                                <div id="faq-content-7" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        You can email gcc@auf.edu.ph (College) or is.gcc@auf.edu.ph (Integrated School), and the assigned
+                                        counselor to your college/department shall provide you the instructions. Kindly include your complete
+                                        name (Last name, First Name, MI; Course/Year graduated; and purpose of request.
+
+                                        <br><br>You can reach us through the following platforms:
+
+                                        <br><br><b>Facebook Page:</b>
+                                        <br>gcc.officialpage (AUF Guidance and Counseling Center (GCC)
+
+                                        <br><br><b>Email Addresses:</b>
+                                        <br>gcc@auf.edu.ph
+                                        <br>is.gcc@auf.edu.ph
+
+                                        <br><br><b>Telephone Number:</b>
+                                        <br>(045) 625 2888 local 1719
+
+                                        <br><br><b>MyClass Courses links (Guidance and Counseling Services):</b>
+
+                                        <br><br><b>Post Graduate Studies:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9134">https://auf.instructure.com/courses/9134</a>
+
+                                        <br><br><b>College:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9142">https://auf.instructure.com/courses/9142</a>
+
+                                        <br><br><b>Senior High School:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9141">https://auf.instructure.com/courses/9141</a>
+
+                                        <br><br><b>Junior High School</b>
+                                        <br><a href="https://auf.instructure.com/courses/9140">https://auf.instructure.com/courses/9140</a>
+
+                                        <br><br><b>Kinder to Elementary</b>
+                                        <br><a href="https://auf.instructure.com/courses/9139">https://auf.instructure.com/courses/9139</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- F.A.Q List 2-->
+                        <div class="accordion accordion-flush" id="faqlist2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">What documents should I submit in order to be officially enrolled?</button>
+                                </h2>
+                                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        The original copies of the following documents, authenticated by the Philippine Embassy / Consulate in
+                                        your country or with affixed Apostille (for Hague Apostille member countries), must be submitted
+                                        personally or by express courier to the Office of the University Registrar, Angeles University
+                                        Foundation, McArthur Highway, Angeles City-2009:
+
+                                        <br><br>
+                                        <ul>
+                                            <li>Transcript of Records / Marksheets</li>
+                                            <li>Birth Certificate</li>
+                                            <li>Police Clearance</li>
+                                            <li>Medical Fitness Certificate</li>
+                                            <li>
+                                                A notarized Affidavit of Support from parents AND proof of adequate financial support (Bank
+                                                Certificate) to cover expenses for student’s accommodation and subsistence, school dues and other
+                                                incidental expenses.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">I have a dual citizenship / recognition as Filipino; what would be my classification when I enroll in AUF?</button>
+                                </h2>
+                                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        If you have a dual citizenship or a recognition as Filipino, you will be
+                                        classified as Filipino once you enroll in AUF, provided that you present any of the following
+                                        documents:
+
+                                        <br><br>
+                                        <ul>
+                                            <li>Philippine Passport</li>
+                                            <li>Certificate of Recognition as a Filipino</li>
+                                            <li>Naturalization Certificate as Filipino</li>
+                                        </ul>
+
+                                        <br>Please note that a BALIKBAYAN visa (BB) is a TOURIST visa, therefore, it is not a valid visa for
+                                        study. If you have this kind of visa, you will be required to secure a student visa or an SSP.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">I am a transferee; will the subjects that I took and passed in my previous school be credited?</button>
+                                </h2>
+                                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        The General Education subjects that you have taken in your previous school
+                                        with grades of at least 85% may be credited provided that the course descriptions and number of units
+                                        are similar with or exceeding those of AUF.
+
+                                        <br><br>The General Education subjects that you have taken in your previous school with grades lower
+                                        than 85% but not below 80% may be credited provided that the course descriptions and number of units
+                                        are similar with or exceeding those of AUF and that you pass the validating examination given by the
+                                        college/unit handling the subjects (CAS, CED, CCS and CCFP).
+
+                                        <br><br>The NSTP and PE subjects that you have taken in your previous school with passing marks will
+                                        be credited.
+
+                                        <br><br>All professional subjects that you have taken in other school/s will not be credited.
+
+                                        <br><br>You have to apply for the crediting of your subject/s by filling out the <a href="https://drive.google.com/file/d/1Qb6kKFjvEXXwifvTMY8PZMYKEIy2Baw0/view?usp=sharing">Subject Crediting Form</a> and submitting the form to your college.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-4">How can I request document/s needed for personal and academic purposes?</button>
+                                </h2>
+                                <div id="faq2-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        You can send a letter of request through gcc@auf.edu.ph (College), is.gcc@auf.edu.ph (Integrated
+                                        School). Kindly include your complete name, the grade and section or year level and course. Your
+                                        active contact details will also be helpful. The assigned counselor will get in touch with you soon.
+
+                                        <br><br><b>Facebook Page:</b>
+                                        <br>gcc.officialpage (AUF Guidance and Counseling Center (GCC)
+
+                                        <br><br><b>Email Addresses:</b>
+                                        <br>gcc@auf.edu.ph
+                                        <br>is.gcc@auf.edu.ph
+
+                                        <br><br><b>Telephone Number:</b>
+                                        <br>(045) 625 2888 local 1719
+
+                                        <br><br><b>MyClass Courses links (Guidance and Counseling Services):</b>
+
+                                        <br><br><b>Post Graduate Studies:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9134">https://auf.instructure.com/courses/9134</a>
+
+                                        <br><br><b>College:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9142">https://auf.instructure.com/courses/9142</a>
+
+                                        <br><br><b>Senior High School:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9141">https://auf.instructure.com/courses/9141</a>
+
+                                        <br><br><b>Junior High School</b>
+                                        <br><a href="https://auf.instructure.com/courses/9140">https://auf.instructure.com/courses/9140</a>
+
+                                        <br><br><b>Kinder to Elementary</b>
+                                        <br><a href="https://auf.instructure.com/courses/9139">https://auf.instructure.com/courses/9139</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-5">Do I need to process Clearance Form when requesting for document/s?</button>
+                                </h2>
+                                <div id="faq2-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        You are required to process <a href="https://drive.google.com/file/u/1/d/1PnXXSyYymB0J7LCVXS7YkkRou3lxvzeG/view?usp=sharing">Clearance Form</a> if your case is any of the following:
+
+                                        <br><br>
+                                        <ol>
+                                            <li>First time to request for document/s</li>
+                                            <li>Applying for Board Examinations</li>
+                                            <li>School of Medicine student or graduate</li>
+                                            <li>Dropping your course – in this case, the <a href="https://drive.google.com/file/d/1PnXXSyYymB0J7LCVXS7YkkRou3lxvzeG/view">Clearance Form</a> should be processed together with a <a href="https://drive.google.com/file/d/1S18j5eDW2CjCEH9G9i0rlyjjrg6lMQTv/view?usp=sharing">Dropping of Course Form</a></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-6">After being officially enrolled, can I still add, change or drop a subject?</button>
+                                </h2>
+                                <div id="faq2-content-6" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        You may still add, change or drop a subject within two weeks from the start of classes, by filling out an <a href="https://drive.google.com/file/d/1eWIq6z2_tj8NhIFqDf3_gPNSAZAoQ47a/view?usp=sharing">
+                                            Adding/Changing/Dropping
+                                            of Subjects Form
+                                        </a> and submitting the form to your respective college. After the two-week period,
+                                        you will not be allowed to add or make changes in your matriculation. Also, dropping of subject/s
+                                        after the said period will warrant a Dropped mark (DRP) if dropping is done before the midterm and a
+                                        failing grade or Failure due to Absences mark (FA) if dropping is done after the midterm.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-7">Where can I request a certificate of enrollment?</button>
+                                </h2>
+                                <div id="faq2-content-7" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        You can email gcc@auf.edu.ph (College) or is.gcc@auf.edu.ph (Integrated School), and the assigned
+                                        counselor to your college/department shall provide you the instructions. Kindly include your complete
+                                        name (Last name, First Name, MI; Course/Year graduated; and purpose of request.
+
+                                        <br><br>You can reach us through the following platforms:
+
+                                        <br><br><b>Facebook Page:</b>
+                                        <br>gcc.officialpage (AUF Guidance and Counseling Center (GCC)
+
+                                        <br><br><b>Email Addresses:</b>
+                                        <br>gcc@auf.edu.ph
+                                        <br>is.gcc@auf.edu.ph
+
+                                        <br><br><b>Telephone Number:</b>
+                                        <br>(045) 625 2888 local 1719
+
+                                        <br><br><b>MyClass Courses links (Guidance and Counseling Services):</b>
+
+                                        <br><br><b>Post Graduate Studies:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9134">https://auf.instructure.com/courses/9134</a>
+
+                                        <br><br><b>College:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9142">https://auf.instructure.com/courses/9142</a>
+
+                                        <br><br><b>Senior High School:</b>
+                                        <br><a href="https://auf.instructure.com/courses/9141">https://auf.instructure.com/courses/9141</a>
+
+                                        <br><br><b>Junior High School</b>
+                                        <br><a href="https://auf.instructure.com/courses/9140">https://auf.instructure.com/courses/9140</a>
+
+                                        <br><br><b>Kinder to Elementary</b>
+                                        <br><a href="https://auf.instructure.com/courses/9139">https://auf.instructure.com/courses/9139</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End F.A.Q Section -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Contact</h2>
+                    <p>Contact Us</p>
+                </header>
+                <div class="row gy-4">
+                    <div class="row gy-4">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bi bi-geo-alt"></i>
+                                <h3>Address</h3>
+                                <p>
+                                    Office of the University Registrar | Room 202, 2ndF, BYA Building, Angeles University Foundation •
+                                    2009 Angeles City, Philippines
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-telephone"></i>
+                                <h3>Call Us</h3>
+                                <p>(63-45) 625-2888 local 1707</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <i class="bi bi-envelope"></i>
+                                <h3>Email Us</h3>
+                                <p>registrar@auf.edu.ph</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bi bi-clock"></i>
+                                <h3>Open Hours</h3>
+                                <p>Tuesday, Wednesday, & Thursday | 8:00AM - 5:00PM</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mapouter">
+                                <div class="gmap_canvas">
+                                    <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+                                            marginheight="0" marginwidth="0"
+                                            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=angeles university foundation&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.fnfgo.com/">Friday Night Funkin Mods</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="~/Clique/HomePage" class="logo d-flex align-items-center">
+                            <img src="~/Content/images/auf-clique.png" alt="">
+                        </a>
+                        <p>A Web-Based Queue Management System with Real-Time Queue Tracking and Notification of Units for Angeles University Foundation Office of the University Registrar</p>
+                        <div class="social-links mt-3">
+                            <a href="https://www.facebook.com/aufconnect/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://twitter.com/AUFconnect" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.linkedin.com/school/angeles-university-foundation/" class="linkedin" target="_blank"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>About AUF</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=history">Brief History of the University</a> </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=universityprofile">University Profile</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=visionandmission">Vision, Mission and Quality Policy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=corevalues">Core Values</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=thefounder">The Founder</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=theadministration">The Administration</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=campusesandfacilities">Campuses and Facilities</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=facultyandstaff">Faculty</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=audevelopmentfoundation">AU Development Foundation</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=communitydevelopment">Community Development</a> </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=benefactorsandfriends">Donations</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=faq">FAQ</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=contactus">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Academics</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=testingdates">Testing Dates</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=admission">Admission</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=universityregistrar">University Registrar</a> </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=academicprograms">Academic Programs</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=academiccalendar">Academic Calendar</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=graduateschool">Graduate School</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=schooloflaw">School of Law</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=schoolofmedicine">School of Medicine</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofAlliedmedicalProfessions">College of Allied Medical Professions</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=collegeofartsandsciences">College of Arts and Sciences</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofBusinessandAccountancy">College of Business and Accountancy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofCriminalJusticeEducation">College of Criminal Justice Education</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofComputerStudies">College of Computer Studies</a></li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofEducation">College of Education</a>
+                            </li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofEngineeringandArchitecture">College of Engineering and Architecture</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=CollegeofNursing">College of Nursing</a></li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=AUFIntegratedSchool">AUF Integrated School</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Student Life</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=studentaffairs">Student Affairs</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=guidanceandcounseling">Guidance and Counseling</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=christianformation">Center for Christian Formation and Praxis</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=healthservices">Health Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=cultureandarts">Culture and Arts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links footer-links-second-row">
+                        <h4>International Affairs</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=foreignadmissions">Foreign Admissions</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=testimonials">Testimonials</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=AdmissionsInIndia">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Research</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=OVPRI">OVPRI</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=researchopportunities">Research Opportunities</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=researcharchives">Research Archives</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=aufitso">AUF ITSO</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=downloadableforms">Downloadable Forms</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=contactovpri">Contact OVPRI</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Alumni</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=aboutaaps">About AAPS</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=aboutauffaa">About AUFFAA</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=visionmissionandqualitypolicy">Vision, Mission and Quality Policy</a></li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=angeleneanalumnicard">Angelenean Alumni Card</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-right"></i> <a href="https://www.auf.edu.ph/modules.php?n=Articles&t=graduatetracersurvey">Graduate Tracer Survey</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>AUF Clique</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="~/Content/js/bootstrap.bundle.js"></script>
+    <script src="~/Content/js/aos.js"></script>
+    <script src="~/Content/js/validate.js"></script>
+    <script src="~/Content/js/swiper-bundle.min.js"></script>
+    <script src="~/Content/js/purecounter.js"></script>
+    <script src="~/Content/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/js/glightbox.min.js"></script>
+    <script src="~/Content/js/homepage.js"></script>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "574271292587725");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+
+</html>

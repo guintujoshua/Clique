@@ -1,0 +1,182 @@
+﻿@model Clique.Models.Services
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <script src="~/Content/js/main.js"></script>
+</head>
+
+@using (Html.BeginForm("ServiceCheckbox", "Clique", FormMethod.Post))
+{
+    <body>
+        <div class="grid max">
+            @Html.CheckBoxFor(m => m.crudsubject, new {  id = "cb1" , style = "display:none;" })
+            <div onclick="chselect(1)">
+                <label for="cb1">
+                    <a href="#">
+                        <div class="card" id="c1">
+                            <div class="img">
+                                <img src="~/Content/images/adding-changing-dropping-of-subjects.png" alt="">
+                            </div>
+                            <ul style="margin-left: 20px;">
+                                <li>Add Subject</li>
+                                <li>Change Subject</li>
+                                <li>Drop Subject</li>
+                            </ul>
+                        </div>
+                        </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.certificationverificationauthentication, new {  id = "cb2" , style = "display:none;" })
+            <div onclick="chselect(2)">
+                <label for="cb2">
+                    <a href="#">
+                        <div class="card" id="c2">
+                            <div class="img">
+                                <img src="~/Content/images/certification-authentication-verification.png" alt="">
+                            </div>
+                            <ul style="margin-left: 20px;">
+                                <li>Certification</li>
+                                <li>Authentication</li>
+                                <li>Verification</li>
+                            </ul>
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.claimofrequestdoc, new {  id = "cb3" , style = "display:none;" })
+            <div onclick="chselect(3)">
+                <label for="cb3">
+                    <a href="#">
+                        <div class="card" id="c3">
+                            <div class="img">
+                                <img src="~/Content/images/claiming-of-requested-document.png"
+                                     alt="">
+                            </div>
+                            Claiming of Requested Document
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.clearance, new {  id = "cb4" , style = "display:none;" })
+            <div onclick="chselect(4)">
+                <label for="cb4">
+                    <a href="#">
+                        <div class="card" id="c4">
+                            <div class="img">
+                                <img src="~/Content/images/clearance.png" alt="">
+                            </div>
+                            Clearance
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.completionofgrade, new {  id = "cb5" , style = "display:none;" })
+            <div onclick="chselect(5)">
+                <label for="cb5">
+                    <a href="#">
+                        <div class="card" id="c5">
+                            <div class="img">
+                                <img src="~/Content/images/completion-of-grade.png" alt="">
+                            </div>
+                            Completion of Grade
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.crossenrollment, new {  id = "cb6" , style = "display:none;" })
+            <div onclick="chselect(6)">
+                <label for="cb6">
+                    <a href="#">
+                        <div class="card" id="c6">
+                            <div class="img">
+                                <img src="~/Content/images/cross-enrollment.png" alt="">
+                            </div>
+                            Cross Enrollment
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.documentreq, new {  id = "cb7" , style = "display:none;" })
+            <div onclick="chselect(7)">
+                <label for="cb7">
+                    <a href="#">
+                        <div class="card" id="c7">
+                            <div class="img">
+                                <img src="~/Content/images/document-request-transcript-of-records-certifications-transfer-credentials.png" alt="">
+                            </div>
+                            <ul style="margin-left: 20px;">
+                                <li>Document Request</li>
+                                <li>Transcript of Records</li>
+                                <li>Certifications</li>
+                                <li>Transfer Credentials</li>
+                            </ul>
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.droppingcourse, new {  id = "cb8" , style = "display:none;" })
+            <div onclick="chselect(8)">
+                <label for="cb8">
+                    <a href="#">
+                        <div class="card" id="c8">
+                            <div class="img">
+                                <img src="~/Content/images/dropping-of-course.png" alt="">
+                            </div>
+                            Dropping of Course
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.subjectcrediting, new {  id = "cb9" , style = "display:none;" })
+            <div onclick="chselect(9)">
+                <label for="cb9">
+                    <a href="#">
+                        <div class="card" id="c9">
+                            <div class="img">
+                                <img src="~/Content/images/subject-crediting.png" alt="">
+                            </div>
+                            Subject Crediting
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => m.others, new {  id = "cb10" , style = "display:none;" })
+            <div onclick="chselect(10)">
+                <label for="cb10">
+                    <a href="#">
+                        <div class="card" id="c10">
+                            <div class="img">
+                                <img src="~/Content/images/others.png" alt="">
+                            </div>
+                            Others
+                        </div>
+                    </a>
+                </label>
+            </div>
+            <div style="background-color: rgba(255, 0, 0, 0.4); height: 100px; border-radius: 35px; text-align: center; border: 0px solid red;">
+                <button type="reset" class="action_btn" onclick="clear_select()">CLEAR SELECTION</button>
+            </div>
+            <div style="background-color: rgba(11, 116, 7, 0.4); height: 100px; border-radius: 35px; text-align: center; border: 0px solid green;">
+                <button class="action_btn">PROCEED</button>
+            </div>
+        </div>
+    </body>
+}
+</html>

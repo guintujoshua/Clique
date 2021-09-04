@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+    display: block;
+}
+
+.max {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.grid {
+    padding: 26px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+    grid-gap: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur( 4px);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+.grid img {
+    width: 65px;
+}
+
+.card {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr;
+    border: 2px solid white;
+    background-color: rgba(250, 250, 250, .25);
+    align-items: center;
+    overflow: hidden;
+    border-radius: 35px;
+    height: 100%;
+}
+
+.card .img {
+    padding: 35.5px;
+    border-radius: 30px;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card2 {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.5px;
+    padding-left: 30px;
+    font-size: 70px;
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (max-width: 650px) {
+    .grid {
+        grid-template-columns: unset;
+    }
+    .card {
+        grid-template-columns: unset;
+    }
+    .grid img {
+        width: 35px;
+        margin: auto;
+    }
+    .card2 {
+        font-size: .8em;
+        text-align: center;
+        padding: 20px 0 !important;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px transparent inset;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+}
+
+input[type=text] {
+    width: 90%;
+    text-align: left;
+}

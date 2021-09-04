@@ -1,0 +1,227 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: url('../images/background.png') no-repeat fixed center;
+    background-size: cover !important;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 2;
+    }
+}
+
+img {
+    display: block;
+}
+
+.input-checkbox {
+    width: 1.2em;
+    height: 1.1em;
+    background-color: white;
+    border-radius: 30%;
+    vertical-align: middle;
+    border: 1px solid white;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+    .input-checkbox:checked {
+        background-color: #fff;
+    }
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form input, .form select {
+    background-color: transparent;
+}
+
+button, input[type="button"], input, select {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.others {
+    color: black !important;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .back img {
+        height: 20px !important;
+        margin-right: 15px;
+    }
+
+.outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/*
+.max.grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+}
+
+.max {
+    margin: auto;
+    padding: 10px;
+    width: 57%;
+}*/
+
+.header img {
+    height: 50px;
+}
+
+.header a.back {
+    height: 39px;
+    padding: 10px 30px;
+    background-color: rgb(88, 88, 88);
+    color: white;
+    border-radius: 15px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.main {
+    background-color: rgba(250, 250, 250, .3);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+    .main *, .main *::placeholder {
+        color: white;
+    }
+
+.main-header {
+    background-color: rgba(250, 250, 250, .3);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.form {
+    display: inline-block;
+    align-items: center;
+    padding: 20px;
+}
+
+/*.form span {
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.form span {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr;
+}
+*/
+
+.col-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.submit {
+    text-decoration: none;
+    text-align: center;
+    background-color: rgba(250, 250, 250, .3);
+    border-radius: 20px;
+    padding: 15px 30px;
+    float: left;
+    font-weight: bolder;
+    font-size: 1.1em;
+    width: 314px !important;
+    margin: 12.5px;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    color: white;
+    transform: scale(1.1);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all .2s ease-in-out;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .col-3, .col-2 {
+        grid-template-columns: unset;
+    }
+
+    .max.grid {
+        height: auto;
+    }
+}
+
+label {
+    display: block;
+    padding-left: 15px;
+    text-indent: 15px;
+    margin-top: -20px;
+    font-weight: bold;
+}
+
+input {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+    margin-left: 5px;
+}
+
+    input[type="button"] {
+        outline: none;
+    }
+
+.row-space {
+    margin-top: -3%;
+}

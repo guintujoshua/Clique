@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+    display: block;
+}
+
+.max {
+    width: 95%;
+    margin: auto;
+}
+
+.header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header>img {
+    height: 50px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: .7em;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(34, 199, 34);
+    border-radius: 15px;
+}
+
+.header span {
+    display: flex;
+}
+
+.header a img {
+    height: 20px;
+}
+
+.header a:nth-child(2) {
+    background-color: #646464;
+}
+
+.t {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.t-con {
+    overflow: auto;
+    border-radius: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+    background-color: rgba(250, 250, 250, .2);
+}
+
+thead tr {
+    background-color: rgba(250, 250, 250, .2);
+    text-transform: uppercase;
+}
+
+thead tr th {
+    padding: 20px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+td {
+    color: white;
+    font-size: 0.9em;
+    padding: 15px 20px;
+}
+
+td img {
+    height: 25px;
+}
+
+.act-btn {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        display: grid;
+        grid-gap: 10px;
+        justify-content: center;
+    }
+    .header img {
+        margin: auto;
+    }
+}

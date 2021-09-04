@@ -1,0 +1,80 @@
+﻿@model Clique.Models.FACULTYSERVICE
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/faculty-services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <script src="~/Content/js/main.js"></script>
+</head>
+
+@using (Html.BeginForm("FacultyServiceCheckbox", "Clique", FormMethod.Post))
+{
+    <body>
+        <div class="grid max">
+            @Html.CheckBoxFor(m => Model.clearance, new { id = "cb1", style = "display:none;" })
+            <div onclick="chselect(1)">
+                <label for="cb1">
+                    <a href="#">
+                        <div class="card" id="c1">
+                            <div class="img">
+                                <img src="~/Content/images/clearance.png" alt="">
+                            </div>
+                           Clearance
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => Model.verification, new { id = "cb2", style = "display:none;" })
+            <div onclick="chselect(2)">
+                <label for="cb2">
+                    <a href="#">
+                        <div class="card" id="c2">
+                            <div class="img">
+                                <img src="~/Content/images/certification-authentication-verification.png" alt="">
+                            </div>
+                            Verification of Grades
+                        </div>
+                    </a>
+                </label>
+            </div>
+            @Html.CheckBoxFor(m => Model.others, new { id = "cb3", style = "display:none;" })
+            <div onclick="chselect(3)">
+                <label for="cb3">
+                    <a href="#">
+                        <div class="card" id="c3">
+                            <div class="img">
+                                <img src="~/Content/images/others.png"
+                                     alt="">
+                            </div>
+                            Others
+                        </div>
+                    </a>
+                </label>
+            </div>
+            <div class="grid2">
+                <div style="background-color: rgba(255, 0, 0, 0.4); height: 100px; border-radius: 35px; text-align: center; border: 0px solid red;">
+                    <button type="reset" class="action_btn" onclick="clear_select()">CLEAR SELECTION</button>
+                </div>
+                <div style="background-color: rgba(11, 116, 7, 0.4); height: 100px; border-radius: 35px; text-align: center; border: 0px solid green;">
+                    <button class="action_btn">PROCEED</button>
+                </div>
+            </div>
+        </div>
+    </body>
+}
+</html>

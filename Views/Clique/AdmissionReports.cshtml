@@ -1,0 +1,236 @@
+﻿@model List<Clique.Models.QTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Admission Report | Clique</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" href="~/Content/css/prism-toolbar.css">
+    <link rel="stylesheet" href="~/Content/css/prism-okaidia.css">
+    <link rel="stylesheet" href="~/Content/css/dashboard.css" id="theme-stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+            <a class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead" href="#"><i class="fas fa-align-left"></i></a><a class="navbar-brand fw-bold text-uppercase text-base" href="/Clique/AdminDashboard"><span class="d-none d-brand-partial">University </span><span class="d-none d-sm-inline">Registrar</span></a>
+            <ul class="ms-auto d-flex align-items-center list-unstyled mb-0">
+                <li class="nav-item dropdown ms-auto">
+                    <a class="nav-link pe-0" id="userInfo" href="#" data-bs-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><img class="avatar" src="~/Content/images/user.png"></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="userInfo">
+                        <div class="dropdown-header text-gray-700">
+                            <h6 class="text-uppercase font-weight-bold top-right">Admin</h6>
+                        </div>
+                        @Html.ActionLink("Reset Queue", "resetqueue", "reset", new { @class = "dropdown-item", onclick = "return confirm('Are you sure you want to reset the queue?');" })
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar py-3" id="sidebar">
+            <h6 class="sidebar-heading">Main</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="/Clique/AdminDashboard">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#real-estate-1"> </use>
+                        </svg><span class="sidebar-link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="/Clique/Accounts">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#user-1"></use>
+                        </svg><span class="sidebar-link-title">Accounts</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted active" href="#" data-bs-target="#formsDropdown" role="button" aria-expanded="true" data-bs-toggle="collapse">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#survey-1"> </use>
+                        </svg><span class="sidebar-link-title">Reports</span>
+                    </a>
+                    <ul class="sidebar-menu list-unstyled collapse show" id="formsDropdown">
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link active text-muted" href="/Clique/AdmissionReports">Admission</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/StudentReports">Student or Graduate</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/FacultyReports">Faculty</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="/Clique/OthersReports">Others</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading">OTHERS</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="~/Clique/Index">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#arrow-left-1"></use>
+                        </svg><span class="sidebar-link-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-holder bg-gray-100">
+            <div class="container-fluid px-lg-4 px-xl-5">
+                <section>
+                    <div class="card card-table mb-4">
+                        <div class="card-header">
+                            <div class="card-heading">
+                                <div class="sa-kaliwa">Admission</div>
+                                <div class="sa-kanan">
+                                    @using (Html.BeginForm("ExportToExcel", "Clique", FormMethod.Post))
+                                    {
+                                        <button class="bubbly-button" style="float: right; margin-right: -1%; background-color: rgb(0, 85, 255); border-radius: 14px;"><i class="fas fa-download mx-1 text-white"></i>Download Report</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-4 mt-3 table-responsive">
+                            <table id="example" class="" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th class="px-3 break_line" style="-webkit-border-top-left-radius: 10px; white-space:nowrap;">First Name</th>
+                                        <th class="px-3 break_line" style="white-space:nowrap;">Middle Name</th>
+                                        <th class="px-3 break_line" style="white-space:nowrap;">Last Name</th>
+                                        <th class="px-3 break_line" style="white-space:nowrap; ">Course</th>
+                                        <th class="px-3 break_line" style="white-space:nowrap;">
+                                            Last School Attended
+                                        </th>
+                                        <th class="px-3 break_line" style="-webkit-border-top-right-radius: 10px; white-space:nowrap;">Date & Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Count(); i++)
+                                    {
+                                        if (@Model[i].UnitColor == "pink" && @Model[i].QStatus == "served")
+                                        {
+                                            <tr>
+                                                <td class="px-3 break_line">@Model[i].Fname</td>
+                                                <td class="px-3 break_line">@Model[i].Mname</td>
+                                                <td class="px-3 break_line">@Model[i].Lname</td>
+                                                <td class="px-3 break_line">@Model[i].Course</td>
+                                                <td class="px-3 break_line">@Model[i].LastSchool</td>
+                                                <td class="px-3 break_line">@Model[i].QDate</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start fw-bold">
+                            <p class="mb-2 mb-md-0 fw-bold">
+                                CLIQUE &copy; 2021 • Web Based Queue Management System
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/js.cookie.min.js"></script>
+    <script src="~/Content/js/theme.js"></script>
+    <script src="~/Content/js/prism.js"></script>
+    <script src="~/Content/js/prism-normalize-whitespace.min.js"></script>
+    <script src="~/Content/js/prism-toolbar.min.js"></script>
+    <script src="~/Content/js/prism-copy-to-clipboard.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                // "dom": '<"top"i>rt<"bottom"flp><"clear">',
+                "searching": true,
+                "bInfo": false,
+                "language": {
+                    "searchPlaceholder": "Search...",
+                    "search": ""
+                },
+                // 'columnDefs': [ {
+                // 	'targets': [7], // yung column na gusto mo na hindi ma sort
+                // 	'orderable': false, // setting the columg na hindi pwede i sort
+                // }],
+                drawCallback: function () {
+                    $('.dataTables_info, .paginate_button, .dataTables_filter, #example_length').addClass('small my-4')
+                    $('.current').addClass('px-3 break_line')
+                }
+            });
+
+            $('.dataTables_filter input[type="search"]').css(
+                { 'width': '400px', 'display': 'inline-block', 'border-radius': '5px', 'outline': 'none' }
+            );
+
+            $('.dataTables_filter input[type="search"]').addClass('search');
+
+            $('.dataTables_filter input[type="search"]').on('keyup', function (e) {
+                if ($(this).val().length > 0) {
+                    $(this).removeClass("search");
+                } else {
+                    $(this).addClass("search");
+                }
+            });
+
+            $('.selections').change(function () {
+                if ($(this).val() == 'Counter Color') {
+                    $('.selections2').html('');
+                    $('.selections2').append(`
+                                    <option value="Green">Green</option>
+                                    <option value="Pink">Pink</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Red">Red</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                `);
+                } else {
+                    $('.selections2').html('');
+                    $('.selections2').append(`
+                                    <option value="BSIT">Bachelor of Science in Information Technology</option>
+                                    <option value="BSMT">Bachelor of Science in Medical Technology</option>
+                                    <option value="BSPT">Bachelor of Science in Physical Therapy</option>
+                                    <option value="BSCS">Bachelor of Science in Computer Science</option>
+                                `);
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="~/Content/css/font-awesome.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+</body>
+
+</html>

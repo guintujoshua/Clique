@@ -1,0 +1,289 @@
+﻿@model Clique.Models.Account
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Account Registration | Clique</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" href="~/Content/css/prism-toolbar.css">
+    <link rel="stylesheet" href="~/Content/css/prism-okaidia.css">
+    <link rel="stylesheet" href="~/Content/css/dashboard.css" id="theme-stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+            <a class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead" href="#"><i class="fas fa-align-left"></i></a><a class="navbar-brand fw-bold text-uppercase text-base" href="~/Clique/AdminDashboard">
+                <span class="d-none d-brand-partial">University </span><span class="d-none d-sm-inline">Registrar</span>
+            </a>
+            <ul class="ms-auto d-flex align-items-center list-unstyled mb-0">
+                <li class="nav-item dropdown ms-auto">
+                    <a class="nav-link pe-0" id="userInfo" href="#" data-bs-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><img class="avatar" src="~/Content/images/user.png"></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="userInfo">
+                        <div class="dropdown-header text-gray-700">
+                            <h6 class="text-uppercase font-weight-bold top-right">Admin</h6>
+                        </div>
+                         @Html.ActionLink("Reset Queue", "resetqueue", "reset", new { @class = "dropdown-item", onclick = "return confirm('Are you sure you want to reset the queue?');" })
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar py-3" id="sidebar">
+            <h6 class="sidebar-heading">Main</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted" href="~/Clique/AdminDashboard">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#real-estate-1"> </use>
+                        </svg><span class="sidebar-link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted active" href="~/Clique/Accounts">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#user-1"></use>
+                        </svg><span class="sidebar-link-title">Accounts</span>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted " href="#" data-bs-target="#formsDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#survey-1"> </use>
+                        </svg><span class="sidebar-link-title">Reports</span>
+                    </a>
+                    <ul class="sidebar-menu list-unstyled collapse " id="formsDropdown">
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="~/Clique/AdmissionReports">Admission</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="~/Clique/StudentReports">Student or Graduate</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="~/Clique/FacultyReports">Faculty</a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a class="sidebar-link text-muted" href="~/Clique/OthersReports">Others</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading">OTHERS</h6>
+            <ul class="list-unstyled">
+                <li class="sidebar-list-item">
+                    <a class="sidebar-link text-muted">
+                        <svg class="svg-icon svg-icon-md me-3">
+                            <use xlink:href="~/Content/icons/orion-svg-sprite.svg#arrow-left-1"></use>
+                        </svg><span class="sidebar-link-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-holder bg-gray-100">
+            <div class="container-fluid px-lg-4 px-xl-5">
+                <section>
+                    <div class="col-lg-12 mb-container-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-heading">Update An Account</h4>
+                            </div>
+                            @{
+                                List<SelectListItem> selections = new List<SelectListItem>() {
+                                    new SelectListItem {
+                                        Text = "Client", Value = "client"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Staff", Value = "staff"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Admin", Value = "admin"
+                                    }
+                                };
+
+                                List<SelectListItem> selections2 = new List<SelectListItem>() {
+                                    new SelectListItem {
+                                        Text = "Blue Counter", Value = "blue"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Yellow counter", Value = "yellow"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Red Counter", Value = "red"
+                                    },
+                                    new SelectListItem {
+                                        Text = "White Counter", Value = "white"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Green Counter", Value = "green"
+                                    },
+                                    new SelectListItem {
+                                        Text = "Pink Counter", Value = "pink"
+                                    }
+                                };
+                            }
+                            <div class="card-body">
+                                @using (Html.BeginForm("SaveEdit", "Clique", FormMethod.Post))
+                                {
+                                    <form ID="frmMain">
+                                        <!-- First Row -->
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-4">
+                                                    @Html.DropDownList("UnitType", selections, new { placeholder = "Type of Account", @class = "form-control", id = "accountType", style = "padding-top: 0.5rem !important; padding-left: .50rem;", onchange = "disableDrop();" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-4">
+                                                    @Html.DropDownList("UnitColor", selections2, new { placeholder = "Type of Account", name = "unitColor", id = "unitColor", @class = "form-control", style = "padding-top: 0.5rem !important; padding-left: .50rem;" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Second Row -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-floating mb-4">
+                                                    @Html.Editor("Fname", new { htmlAttributes = new { @class = "form-control", id = "floatingPassword", type = "text", placeholder = "First Name" } })
+                                                    <label for="floatingPassword">First Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-floating mb-4">
+                                                    @Html.Editor("Mname", new { htmlAttributes = new { @class = "form-control", id = "floatingPassword", type = "text", placeholder = "Middle Name" } })
+                                                    <label for="floatingPassword">Middle Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-floating mb-4">
+                                                    @Html.Editor("Lname", new { htmlAttributes = new { @class = "form-control", id = "floatingPassword", type = "text", placeholder = "Last Name" } })
+                                                    <label for="floatingPassword">Last Name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Third Row -->
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-4">
+                                                    @Html.Editor("UserName", new { htmlAttributes = new { @class = "form-control", id = "floatingPassword", type = "text", placeholder = "Username" } })
+                                                    <label for="floatingPassword">Username</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-4">
+                                                    @Html.Editor("Password", new { htmlAttributes = new { @class = "form-control", id = "floatingPassword", type = "password", placeholder = "Password" } })
+                                                    <label for="floatingPassword">Password</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit" style="height: 50px;">UPDATE</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start fw-bold">
+                            <p class="mb-2 mb-md-0 fw-bold">CLIQUE &copy; 2021 • Web Based Queue Management System</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/js.cookie.min.js"></script>
+    <script src="~/Content/js/theme.js"></script>
+    <script src="~/Content/js/prism.js"></script>
+    <script src="~/Content/js/prism-normalize-whitespace.min.js"></script>
+    <script src="~/Content/js/prism-toolbar.min.js"></script>
+    <script src="~/Content/js/prism-copy-to-clipboard.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+                "dom": '<"top"i>rt<"bottom"flp><"clear">',
+                "searching": false,
+                "bInfo": false,
+                drawCallback: function () {
+                    $('.dataTables_info, .paginate_button, .dataTables_filter').addClass('small')
+                    $('#example_length').addClass('small')
+                    $('.current').addClass('p-0')
+                }
+            });
+
+            $('.bubbly-button').click(function () {
+                $('#comment_modal').appendTo("body").modal('show');
+            });
+            var animateButton = function (e) {
+
+                e.preventDefault;
+                //reset animation
+                e.target.classList.remove('animate');
+
+                e.target.classList.add('animate');
+                setTimeout(function () {
+                    e.target.classList.remove('animate');
+                }, 1);
+            };
+
+            var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+            for (var i = 0; i < bubblyButtons.length; i++) {
+                bubblyButtons[i].addEventListener('click', animateButton, false);
+            }
+            Prism.plugins.NormalizeWhitespace.setDefaults({
+                'remove-trailing': true,
+                'remove-indent': true,
+                'left-trim': true,
+                'right-trim': true,
+            });
+        });</script>
+
+    <script type="text/javascript">
+        function disableDrop() {
+            if (frmMain.accountType.options[1].selected) {
+                frmMain.unitColor.disabled = true;
+            }
+            else if (frmMain.accountType.options[2].selected) {
+                frmMain.unitColor.disabled = false;
+            }
+            else if (frmMain.accountType.options[3].selected) {
+                frmMain.unitColor.disabled = true;
+            }
+            else {
+                alert("Invalid");
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="~/Content/css/font-awesome.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+</body>
+
+</html>

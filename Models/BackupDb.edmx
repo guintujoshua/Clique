@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BackUpDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="backuptable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="QNPink" Type="int" />
+          <Property Name="QNWhite" Type="int" />
+          <Property Name="QNBlue" Type="int" />
+          <Property Name="QNRed" Type="int" />
+          <Property Name="QNYellow" Type="int" />
+          <Property Name="QNGreen" Type="int" />
+          <Property Name="UnitColor" Type="varchar" MaxLength="50" />
+          <Property Name="Service" Type="varchar(max)" />
+          <Property Name="UID" Type="varchar" MaxLength="50" />
+          <Property Name="Fname" Type="varchar" MaxLength="50" />
+          <Property Name="Mname" Type="varchar" MaxLength="50" />
+          <Property Name="Lname" Type="varchar" MaxLength="50" />
+          <Property Name="Course" Type="varchar" MaxLength="50" />
+          <Property Name="LastSchool" Type="varchar" MaxLength="50" />
+          <Property Name="QDate" Type="date" />
+          <Property Name="Qstatus" Type="varchar" MaxLength="50" />
+          <Property Name="ClientType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BackUpDbModelStoreContainer">
+          <EntitySet Name="backuptable" EntityType="Self.backuptable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BackUpDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="backuptable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="QNPink" Type="Int32" />
+          <Property Name="QNWhite" Type="Int32" />
+          <Property Name="QNBlue" Type="Int32" />
+          <Property Name="QNRed" Type="Int32" />
+          <Property Name="QNYellow" Type="Int32" />
+          <Property Name="QNGreen" Type="Int32" />
+          <Property Name="UnitColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Service" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastSchool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QDate" Type="DateTime" Precision="0" />
+          <Property Name="Qstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="backupdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="backuptables" EntityType="Self.backuptable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BackUpDbModelStoreContainer" CdmEntityContainer="backupdbEntities">
+          <EntitySetMapping Name="backuptables">
+            <EntityTypeMapping TypeName="BackUpDbModel.backuptable">
+              <MappingFragment StoreEntitySet="backuptable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="QNPink" ColumnName="QNPink" />
+                <ScalarProperty Name="QNWhite" ColumnName="QNWhite" />
+                <ScalarProperty Name="QNBlue" ColumnName="QNBlue" />
+                <ScalarProperty Name="QNRed" ColumnName="QNRed" />
+                <ScalarProperty Name="QNYellow" ColumnName="QNYellow" />
+                <ScalarProperty Name="QNGreen" ColumnName="QNGreen" />
+                <ScalarProperty Name="UnitColor" ColumnName="UnitColor" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Mname" ColumnName="Mname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="LastSchool" ColumnName="LastSchool" />
+                <ScalarProperty Name="QDate" ColumnName="QDate" />
+                <ScalarProperty Name="Qstatus" ColumnName="Qstatus" />
+                <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

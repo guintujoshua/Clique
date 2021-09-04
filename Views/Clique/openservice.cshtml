@@ -1,0 +1,175 @@
+﻿@model Clique.Models.Services
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Management | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/service-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+    .checkbox {
+        padding-left: 10px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+        .checkbox input {
+            float: left
+        }
+</style>
+
+<body>
+
+        <div class="outer align-items-center">
+            <div class="main">
+                <div class="main-header">
+                    <h1><b>SERVICES</b></h1>
+                </div>
+                <div class="form">
+                    @using (Html.BeginForm("updateservice", "Clique", FormMethod.Post))
+                    {
+                        <div class="col-md-12">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.admission, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Admission</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1 mt-2">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.crudsubject, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Adding, Changing, Dropping of Subjects </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.certificationverificationauthentication, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Certification, Authentication, Verification</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.claimofrequestdoc, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Claiming of Requested Document</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.clearance, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Clearance</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.completionofgrade, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Completion of Grade</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.crossenrollment, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Cross Enrollment</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.documentreq, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Document Request, Transcript of Records, Certifications, Transfer Credentials </span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.droppingcourse, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Dropping of Course</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.subjectcrediting, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Subject Crediting</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="checkbox">
+                                <div class="row">
+                                    <div class="mt-1">
+                                        @Html.CheckBoxFor(m => m.others, new { @class = "input-checkbox" })
+                                    </div>
+                                    <span>Others</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="row-5">
+                            <button class="submit" style="outline: none;">SAVE</button>
+                            <button class="submit" style="outline: none;">BACK</button>
+                        </div>
+                    }
+                </div>
+                  
+            </div>
+        </div>
+
+    </body>
+
+</html>

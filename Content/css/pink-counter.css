@@ -1,0 +1,340 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: url('../images/background.png') no-repeat fixed center;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    animation: fadeInAnimation ease 1.5s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInAnimation
+{ 
+    0%
+    { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 2; 
+    } 
+}
+
+.modal-body label {
+    padding-left: 5px;
+    font-size: 11px;
+}
+
+.btns {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+}
+
+.btns:hover {
+    transform: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    background: transparent !important;
+}
+
+img {
+    display: block;
+}
+
+p {
+    margin: auto auto;
+    display: block;
+}
+
+.flex-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 9px;
+}
+
+.custom_container {
+    padding: 20px;
+    width: 95%;
+    margin: auto;
+}
+
+.dropbtn {
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: none;
+}
+
+.nav-container button:nth-child(1) {
+    background-color: #f0c93d;
+}
+
+.nav-container button:nth-child(2) {
+    background-color: #524F4E;
+}
+
+.nav-container .dropbtn a p {
+    margin-left: 15px;
+    font-weight: bolder;
+}
+
+.nav-container span {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+}
+
+.nav-container {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+    .nav-container button a img {
+        height: 20px;
+        float: left;
+        margin-right: 2px;
+    }
+
+    .nav-container button a {
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        font-size: .7em;
+        color: white;
+    }
+
+    .nav-container > img {
+        height: 50px;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 153px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 15px;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 15px;
+    font-size: 11px;
+}
+
+.title {
+    color: white;
+    font-size: 1.2em;
+}
+
+.red-border {
+    border-radius: 15px;
+    overflow: auto;
+}
+
+table {
+    overflow: hidden;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur( 4px);
+    border-collapse: collapse;
+}
+
+    table * {
+        color: white;
+        font-weight: bolder;
+    }
+
+thead {
+    border-radius: 10px;
+    background-color: #f774d4;
+    font-size: 1.1em;
+}
+
+    thead th {
+        padding: 10px;
+    }
+
+tbody {
+    padding: 10px;
+    text-align: center;
+}
+
+    tbody td {
+        padding: 15px;
+    }
+
+    tbody img {
+        height: 15px;
+    }
+
+    tbody a {
+        padding: 5px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: white;
+        background-color: #dc3a3d;
+        font-size: .7em;
+    }
+
+.flex-mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100px;
+}
+
+tr td:nth-child(3), tr th:nth-child(3) {
+    width: 250px;
+}
+
+tr td:nth-child(1), tr td:nth-child(2), tr th:nth-child(1), tr th:nth-child(2) {
+    font-size: .9em !important;
+}
+
+.serve {
+    background-color: #34986d;
+}
+
+a.solo-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 9px;
+}
+
+button:hover, button:focus {
+    outline: none;
+}
+
+a:hover {
+    color: white;
+    transform: scale(1.5);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all .2s ease-in-out;
+    background-color: #a3282a;
+}
+
+a.serve:hover {
+    color: white;
+    transform: scale(1.5);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all .2s ease-in-out;
+    background-color: #2b6f52;
+}
+
+.dropbtn:hover {
+    color: white;
+    transform: scale(1.5);
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all .2s ease-in-out;
+}
+
+.nav-btns:hover {
+    background-color: inherit !important;
+    color: white;
+    transform: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .header {
+        display: grid !important;
+        justify-content: center;
+    }
+
+        .header > img {
+            margin: auto;
+        }
+}
+
+@media all and (display-mode: fullscreen) {
+    .custom_container {
+        padding: 80px;
+        width: 95%;
+        margin: auto;
+    }
+}
+
+.additional-margin {
+    margin-bottom: 2%;
+}
+
+a {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+a.serve {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.dropbtn {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-btns {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}

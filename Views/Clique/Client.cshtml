@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client | Clique</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="~/Content/images/icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/Content/css/client.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="grid max">
+        <div>
+            <a href="@Url.Action("admissionsform", "Clique")" class="card">
+                <div class="img">
+                    <img src="~/Content/images/admission.png" alt="" style="width:120px; height:120px;">
+                </div>
+                <div class="card2">ADMISSION</div>
+            </a>
+        </div>
+        <div>
+            <a href="~/Clique/Nationality" class="card">
+                <div class="img">
+                    <img src="~/Content/images/student.png" alt="" style="width:120px; height:120px;">
+                </div>
+                <div class="card2">STUDENT OR GRADUATE</div>
+            </a>
+        </div>
+        <div>
+            <a href="@Url.Action("IDFaculty", "Clique")" class="card">
+                <div class="img">
+                    <img src="~/Content/images/faculty.png" alt="" style="width:120px; height:120px;">
+                </div>
+                <div class="card2">FACULTY</div>
+            </a>
+        </div>
+        <div>
+            <a href="@Url.Action("IDOthers", "Clique")" class="card">
+                <div class="img">
+                    <img src="~/Content/images/others-icon.png" alt="" style="width:120px; height:120px;">
+                </div>
+                <div class="card2">OTHERS<div class="representative">(REPRESENTATIVE)</div></div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
